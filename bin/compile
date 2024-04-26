@@ -135,4 +135,4 @@ function debug_apt() {
 }
 
 output_section "Debug apt"
-debug_apt()
+debug_apt
