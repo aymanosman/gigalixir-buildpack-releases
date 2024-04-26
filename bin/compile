@@ -126,3 +126,13 @@ echo '{"distillery": {"eval": "elixir", "rpc": "no_print", "start_command": "sta
 
 # so it can be deleted outside of container
 chmod +w $cache_dir/out/capabilities
+
+function debug_apt() {
+  set +o errexit    # do not exit if there is an error
+  ls $cache_dir
+  ls $cache_dir/.apt
+  set -o errexit    # always exit on error
+}
+
+output_section "Debug apt"
+debug_apt()
